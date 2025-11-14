@@ -28,6 +28,11 @@ const orderSchema = new mongoose.Schema(
       required: true,
       unique: true,
     },
+     invoice_number: {
+      type: String,
+      required: false,
+      unique: true,
+    },
     table_no: {
       type: Number,
       required: function () {
@@ -38,12 +43,12 @@ const orderSchema = new mongoose.Schema(
     customer_id: {
       type: String,
       ref: "Customer",
-      required: true,
+      required: false,
     },
     employee_id: {
       type: String,
       ref: "Employee",
-      required: true,
+      required: false,
     },
     mop: {
       type: String,
@@ -60,7 +65,7 @@ const orderSchema = new mongoose.Schema(
     },
     order_status: {
       type: String,
-      enum: ["Pending", "In Progress", "Completed", "Cancelled"],
+      enum: ["Pending", "In Progress", "Completed", "Cancelled", "Placed"],
       default: "Pending",
     },
     payment_status: {

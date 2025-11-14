@@ -13,6 +13,7 @@ import orderRoutes from "./routes/orderRoutes.js";
 import customerRoutes from "./routes/customerRoutes.js";
 import employeeRoutes from "./routes/employeeRoutes.js";
 import wasenderRoutes from "./routes/wasenderRoutes.js";
+import messageConfigRoutes from "./routes/messageConfigRoutes.js";
 
 
 
@@ -27,6 +28,7 @@ app.use("/api/orders", orderRoutes);
 app.use("/api/customers", customerRoutes);
 app.use("/api/employees", employeeRoutes);
 app.use("/api/wasender", wasenderRoutes);
+app.use("/api/message-config", messageConfigRoutes);
 
 app.get("/", (req, res) => res.send("Restaurant POS API Running 🚀"));
 
